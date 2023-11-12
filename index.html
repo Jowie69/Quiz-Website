@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Development Quiz Site</title>
+    <link rel="shortcut icon" href="Quiz-Logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <header class="header">
+        <a href="#" class="logo"> &lt;/Kuwis&gt;</a>
+
+        <nav class="navbar">
+          <a href="#" class="active"></a>
+          <a href="#"></a>
+          <a href="#"></a>
+          <a href="#"></a>
+        </nav>
+      </header>
+      <audio id="myAudio" autoplay loop>
+        <source src="music/The Game Show Theme Music.mp3" type="audio/mp3" />
+      </audio>
+
+      <script>
+        var audio = document.getElementById("myAudio");
+        var isPaused = false;
+
+        // Pause the audio when the user leaves the website
+        window.onblur = function () {
+          if (!audio.paused) {
+            audio.pause();
+            isPaused = true;
+          }
+        };
+
+        // Resume playback when the user returns to the website
+        window.onfocus = function () {
+          if (isPaused) {
+            audio.play();
+            isPaused = false;
+          }
+        };
+      </script>
+
+      <div class="container">
+        <section class="quiz-section">
+          <div class="quiz-box">
+            <h1>Pa-Quiz nga, Kuya Jowie!</h1>
+            <div class="quiz-header">
+              <span>Galingan mo pi, ehe.</span>
+              <span class="header-score">Iskor: 0 / 5</span>
+            </div>
+            <h2 class="question-text">What does HTML stands for?</h2>
+            <div class="option-list">
+              <!-- <div class="option">
+                            <span>A. Hyper type multi Language</span>
+                        </div>
+                        <div class="option">
+                            <span>B. Hyper type multiple Language</span>
+                        </div>
+                        <div class="option">
+                            <span>C. Hyper type markup Language</span>
+                        </div>
+                        <div class="option">
+                            <span>D. Home type multi Language</span>
+                        </div> -->
+            </div>
+            <div class="quiz-footer">
+              <span class="question-total">1 sa 5 na tanong</span>
+              <button class="next-btn">Sunod:</button>
+            </div>
+          </div>
+          <div class="result-box">
+            <h2>Quiz Result!</h2>
+            <div class="percentage-container">
+              <div class="circular-progress">
+                <span class="progress-value">0%</span>
+              </div>
+              <span class="score-test">Ang 'yong iskor ay 0 out of 5</span>
+            </div>
+            <div class="buttons">
+              <button class="try-btn">Try Again</button>
+              <button class="go-btn">Go to home</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="home">
+          <div class="home-content">
+            <h1>Kuwis</h1>
+            <p>
+              Maligayang pagdating sa Kuwis, kung saan nagtatagpo ang kaalaman
+              at kasayahan! Languyin ang isang daigdig ng kaligayahan at hamunin
+              ang iyong katalinuhan sa aming iba't ibang uri ng mga pagsusulit.
+              Kung ikaw ay isang nagmamahal ng trivia, isang eksperto sa
+              kasaysayan, sa pop culture, o simpleng naghahanap lang ng
+              magandang oras, mayroon kaming para sa bawat isa.
+            </p>
+            <button class="start-btn">Simulan na!</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="popup-info">
+      <h2>Gabay sa Quiz</h2>
+      <span class="info"
+        >1. Simulan sa pagpili ng wika ng programming o paksa na nais mong
+        pagkuwestiyunan.
+      </span>
+      <span class="info"
+        >2. Kilalanin ang mga uri ng mga tanong na maaaring iyong masumpungan.
+      </span>
+      <span class="info"
+        >3. Bago sagutin, basahing mabuti ang bawat tanong.</span
+      >
+      <span class="info"
+        >4. Kung hindi ka sigurado sa isang sagot, gamitin ang proseso ng
+        pag-elimina.
+      </span>
+      <span class="info"
+        >5. Maglaan ng oras. Ang aming quiz ay idinisenyo upang maging mahirap
+        ngunit kasiya-siya.</span
+      >
+      <span class="info"
+        >6. Kapag tapos mo na ang quiz, maglaan ng sandaling suriin ang iyong
+        mga sagot.
+      </span>
+
+      <div class="btn-group">
+        <button class="info-btn exit-btn">Bumalik</button>
+        <a href="#" class="info-btn continue-btn">Magpatuloy</a>
+      </div>
+    </div>
+
+    <script src="question.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
